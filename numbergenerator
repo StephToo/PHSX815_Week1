@@ -47,7 +47,10 @@ class Random:
 if __name__ == "__main__":
     # if the user includes the flag -h or --help print the options
     if '-h' in sys.argv or '--help' in sys.argv:
+        file = open('output.txt', 'a')
+        sys.stdout = file
         print ("Usage: %s [-seed number]" % sys.argv[0])
+        file.close()
         print
         sys.exit(1)
 
